@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:pokedex/models/Pokemon.dart';
 
 class PokedexApi {
@@ -10,17 +8,13 @@ class PokedexApi {
 
   static Future<List<Pokedex>> getCharsData() async {
     List<Pokedex> _list = [];
-
     var result = await Dio().get(_url);
-
     var poke = jsonDecode(result.data)["pokemon"];
-
     if (poke is List) {
       _list = poke.map((e) => Pokedex.fromJson(e)).toList();
     } else {
       return [];
     }
-
     return _list;
   }
 }

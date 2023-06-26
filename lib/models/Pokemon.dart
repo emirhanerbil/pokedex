@@ -54,13 +54,13 @@ class Pokedex {
     if (json['prev_evolution'] != null) {
       prevEvolution = <PrevEvolution>[];
       json['prev_evolution'].forEach((v) {
-        prevEvolution!.add(new PrevEvolution.fromJson(v));
+        prevEvolution!.add(PrevEvolution.fromJson(v));
       });
     }
     if (json['next_evolution'] != null) {
       nextEvolution = <NextEvolution>[];
       json['next_evolution'].forEach((v) {
-        nextEvolution!.add(new NextEvolution.fromJson(v));
+        nextEvolution!.add(NextEvolution.fromJson(v));
       });
     }
   }
