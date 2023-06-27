@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   ListView ListViewPoke(List<Pokedex> _liste) {
     return ListView.separated(
       separatorBuilder: (context, index) {
-        return const SizedBox(height: 60);
+        return const SizedBox(height: 43);
       },
       itemCount: _liste.length,
       itemBuilder: (context, index) {
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(20),
-                  gradient: pokeTypeGradient("fire")),
+                  gradient: pokeTypeGradient("water")),
               height: 150,
               alignment: Alignment.bottomRight,
               child: Container(
