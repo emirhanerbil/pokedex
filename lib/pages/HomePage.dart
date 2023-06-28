@@ -1,14 +1,7 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:pokedex/pages/PokemonPage.dart';
 import 'package:pokedex/services/pokedex_api.dart';
 import 'package:pokedex/models/Pokemon.dart';
-
 import '../components/poke_listview.dart';
-import '../components/pokemon_box_shadow.dart';
-import '../components/poketype_gradient.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
