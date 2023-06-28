@@ -8,7 +8,8 @@ class PokedexApi {
 
   static Future<List<Pokedex>> getCharsData() async {
     List<Pokedex> _list = [];
-    var result = await Dio().get(_url);
+    var result = await Dio().get(_url).timeout(const Duration(seconds: 2));
+
     var poke = jsonDecode(result.data)["pokemon"];
     if (poke is List) {
       _list = poke.map((e) => Pokedex.fromJson(e)).toList();

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/components/pokemon_box_shadow.dart';
@@ -51,7 +52,7 @@ Stack ImageRightTextLeftCard(List<Pokedex> _liste, int index) {
         alignment: Alignment.bottomLeft,
         child: Container(
             width: 120,
-            margin: const EdgeInsets.only(bottom: 20, left: 10),
+            margin: const EdgeInsets.only(bottom: 20, left: 20),
             child: Text(
               "#${_liste[index].num.toString()} \n${_liste[index].name.toString()} \n${_liste[index].type!.first}",
               style:

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/Pokemon.dart';
-import 'package:pokedex/pages/HomePage.dart';
-import 'package:pokedex/pages/PokemonPage.dart';
+import 'package:pokedex/pages/home_page.dart';
+import 'package:pokedex/pages/pokemon_page.dart';
 import 'package:pokedex/services/pokedex_api.dart';
 
 void main() {
