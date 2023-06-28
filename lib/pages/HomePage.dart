@@ -1,6 +1,8 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pokedex/pages/PokemonPage.dart';
 import 'package:pokedex/services/pokedex_api.dart';
 import 'package:pokedex/models/Pokemon.dart';
 
@@ -16,6 +18,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // @override
+  // void initState() {
+  //   super.initState();
+
+  //   _liste.shuffle();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +40,7 @@ class _HomePageState extends State<HomePage> {
               return Text('Hata: ${snapshot.error}');
             } else {
               List<Pokedex> _liste = snapshot.data!;
+              _liste.shuffle();
               return NoGlowListView(_liste);
             }
           },

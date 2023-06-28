@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/models/Pokemon.dart';
 import 'package:pokedex/pages/HomePage.dart';
+import 'package:pokedex/pages/PokemonPage.dart';
 import 'package:pokedex/services/pokedex_api.dart';
 
 void main() {
@@ -14,12 +17,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     PokedexApi.getCharsData();
     return MaterialApp(
+      routes: {
+        "/HomePage": (context) => HomePage(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == '/PokemonPage') {
+          final Pokedex pokemon = settings.arguments as Pokedex;
+          return CupertinoPageRoute(
+            builder: (context) {
+              return PokemonPage(pokemon: pokemon);
+            },
+          );
+        }
+      },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-          colorScheme: ColorScheme.dark(),
-          androidOverscrollIndicator: AndroidOverscrollIndicator.stretch),
-      themeMode: ThemeMode.system,
+      theme: ThemeData.dark(),
       home: HomePage(),
     );
   }
