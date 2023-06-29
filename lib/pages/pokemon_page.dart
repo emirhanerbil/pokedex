@@ -12,6 +12,7 @@ class PokemonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF181d1e),
       body: Container(
           margin: const EdgeInsets.only(top: 20),
           alignment: Alignment.center,
