@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-BoxShadow PokemonBoxShadow(String pokeType) {
+BoxShadow pokemonBoxShadow(String pokeType) {
   if (pokeType == "Water" || pokeType == "Ice") {
     return BoxShadow(
         spreadRadius: 0,

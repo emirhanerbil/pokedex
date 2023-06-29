@@ -1,23 +1,21 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/components/pokemon_box_shadow.dart';
 import 'package:pokedex/components/poketype_gradient.dart';
-
 import '../models/Pokemon.dart';
 
-NotificationListener<OverscrollIndicatorNotification> NoGlowListView(
+NotificationListener<OverscrollIndicatorNotification> noGlowListView(
     List<Pokedex> _liste) {
   return NotificationListener<OverscrollIndicatorNotification>(
     onNotification: (OverscrollIndicatorNotification overscroll) {
       overscroll.disallowIndicator();
       return true;
     },
-    child: PokeListView(_liste),
+    child: pokeListView(_liste),
   );
 }
 
-ListView PokeListView(List<Pokedex> _liste) {
+ListView pokeListView(List<Pokedex> _liste) {
   return ListView.separated(
     separatorBuilder: (context, index) {
       return const SizedBox(height: 43);
@@ -31,20 +29,20 @@ ListView PokeListView(List<Pokedex> _liste) {
         },
         child: Container(
           child: index % 2 == 0
-              ? ImageLeftTextRightCard(_liste, index)
-              : ImageRightTextLeftCard(_liste, index),
+              ? imageLeftTextRightCard(_liste, index)
+              : imageRightTextLeftCard(_liste, index),
         ),
       );
     },
   );
 }
 
-Stack ImageRightTextLeftCard(List<Pokedex> _liste, int index) {
+Stack imageRightTextLeftCard(List<Pokedex> _liste, int index) {
   return Stack(children: [
     Container(
-        margin: EdgeInsets.only(right: 20, left: 20),
+        margin: const EdgeInsets.only(right: 20, left: 20),
         decoration: BoxDecoration(
-            boxShadow: [PokemonBoxShadow(_liste[index].type!.first)],
+            boxShadow: [pokemonBoxShadow(_liste[index].type!.first)],
             color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
             gradient: pokeTypeGradient(_liste[index].type!.first)),
@@ -69,12 +67,12 @@ Stack ImageRightTextLeftCard(List<Pokedex> _liste, int index) {
   ]);
 }
 
-Stack ImageLeftTextRightCard(List<Pokedex> _liste, int index) {
+Stack imageLeftTextRightCard(List<Pokedex> _liste, int index) {
   return Stack(children: [
     Container(
-        margin: EdgeInsets.only(right: 20, left: 20),
+        margin: const EdgeInsets.only(right: 20, left: 20),
         decoration: BoxDecoration(
-            boxShadow: [PokemonBoxShadow(_liste[index].type!.first)],
+            boxShadow: [pokemonBoxShadow(_liste[index].type!.first)],
             color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
             gradient: pokeTypeGradient(_liste[index].type!.first)),

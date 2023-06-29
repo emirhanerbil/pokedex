@@ -22,8 +22,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(left: 30, right: 30),
-        padding: EdgeInsets.only(top: 50),
+        margin: const EdgeInsets.only(left: 30, right: 30),
+        padding: const EdgeInsets.only(top: 50),
         child: FutureBuilder(
           future: PokedexApi.getCharsData(),
           builder: (context, snapshot) {
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             } else {
               List<Pokedex> _liste = snapshot.data!;
               _liste.shuffle();
-              return NoGlowListView(_liste);
+              return noGlowListView(_liste);
             }
           },
         ),

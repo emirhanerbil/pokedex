@@ -12,13 +12,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     PokedexApi.getCharsData();
     return MaterialApp(
       routes: {
-        "/HomePage": (context) => HomePage(),
+        "/HomePage": (context) => const HomePage(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/PokemonPage') {
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

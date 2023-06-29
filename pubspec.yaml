@@ -39,6 +39,7 @@ dependencies:
   dio: ^5.2.1+1
   google_fonts: any
   cached_network_image: ^3.2.3
+  
 
 dev_dependencies:
   flutter_test:
